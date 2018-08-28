@@ -12,6 +12,13 @@ const routes: Routes = [{
     path: '',
     loadChildren: './apoinment-detail/apoinment-detail.module#ApoinmentDetailModule'
   }]
+},
+{
+  path:'detail',
+  children: [{
+    path: '',
+    loadChildren: './booking-detail/booking-detail.module#BookingDetailModule'
+  }]
 }]
 @NgModule({
   imports: [

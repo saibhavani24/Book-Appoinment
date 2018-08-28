@@ -7,17 +7,30 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./timeslot.component.css']
 })
 export class TimeslotComponent implements OnInit {
-time: any;
+  time = ['9:00 - 10:00',
+    '10:00 - 11:00',
+    '11:00 - 12:00',
+    '12:00 - 13:00',
+    '13:00 - 14:00',
+    '14:00 - 15:00',
+    '15:00 - 16:00',
+    '16:00 - 17:00',
+    '17:00 - 18:00',
+  ];
+  booked: any;
   constructor(
     private router: Router
   ) { }
   ngOnInit() {
-    this.time = localStorage.getItem('Timing');
+    this.booked = localStorage.getItem('Timing');
   }
   /* store time slot in local storage and navigate to appoinment form */
   bookAppoinment(params) {
-    localStorage.getItem('Timing');
     localStorage.setItem('Timing', params);
-    this.router.navigate(['/appoinment'])
+    if (this.booked === params) {
+      this.router.navigate(['/detail']);
+    } else {
+      this.router.navigate(['/appoinment'])
+    }
   }
 }
