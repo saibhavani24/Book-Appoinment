@@ -9,6 +9,6 @@ export class AppoinmentService {
     private http: HttpClient
   ) { }
   timeSlot() {
-    return this.http.get('');
+    return this.http.get('localhost:5000/time/BookSlot');
   }
 }

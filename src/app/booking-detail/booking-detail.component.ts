@@ -16,7 +16,6 @@ export class BookingDetailComponent implements OnInit {
     this.mobile = localStorage.getItem('Mobile Number');
   }
   edit(value) {
-    console.log(value);
     localStorage.setItem('First Name', this.firstName);
     localStorage.setItem('Last Name', this.lastName);
     localStorage.setItem('Mobile Number', this.mobile);
